@@ -1,8 +1,9 @@
+import matplotlib.pyplot as plt
 import igraph as ig
 import sys
 
 # Init graph
-graph = ig.Graph()
+graph = ig.Graph(directed = True)
 base_domain_name = ""
 
 
@@ -73,7 +74,24 @@ def parseDirbFile(filename):
         next(f)
 
         first_list = collectDirObjects(f)
-        print(first_list)
+
+        graph.add_vertices([base_domain_name] + first_list)
+        graph.add_edges([(base_domain_name, obj) for obj in first_list])
+
+        layout = graph.layout("tree")
+
+        # Scale figure width based on number of nodes for spacing
+        node_count = graph.vcount()
+        fig_width = max(14, node_count * 0.6)
+        fig_height = max(6, fig_width * 0.2)
+
+        fig, ax = plt.subplots(figsize=(fig_width, fig_height))
+        ig.plot(graph, layout=layout, target=ax, margin=40,
+                vertex_size=20, vertex_label_size=7,
+                edge_width=0.5, edge_arrow_size=0.5, edge_arrow_width=0.5)
+        plt.title("DIRB Scan Graph")
+        plt.tight_layout()
+        plt.show()
 
     
 parseDirbFile(sys.argv[1])
