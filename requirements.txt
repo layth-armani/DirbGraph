@@ -8,7 +8,9 @@ numpy==2.4.4
 packaging==26.0
 pillow==12.2.0
 pyparsing==3.3.2
+PyQt6==6.10.2
+PyQt6-Qt6==6.10.2
+PyQt6_sip==13.11.0
 python-dateutil==2.9.0.post0
 six==1.17.0
-texttable==1.7.0matplotlib>=3.10
-igraph>=1.0
+texttable==1.7.0

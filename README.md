@@ -8,6 +8,7 @@ Install the required dependencies using:
 ```bash
 pip install -r requirements.txt
 ```
+If you are running this on Linux, I included PyQt6 libraries in the `requirements.txt` file since a GUI toolkit library.
 
 ## Usage
 1. Run the `dirb` tool to generate a text output file (run in silent mode with -S to avoid printing "Testing..." lines):
