@@ -16,7 +16,7 @@ pip install -r requirements.txt
    ```
 2. Use this program to process the `scan.txt` file:
    ```bash
-   python parser.py
+   python parser.py scan.txt
    ```
 
 ## License
