@@ -10,9 +10,9 @@ pip install -r requirements.txt
 ```
 
 ## Usage
-1. Run the `dirb` tool to generate a text output file:
+1. Run the `dirb` tool to generate a text output file (run in silent mode with -S to avoid printing "Testing..." lines):
    ```bash
-   dirb <target_url> <wordlist> -o scan.txt
+   dirb <target_url> <wordlist> -S -o scan.txt
    ```
 2. Use this program to process the `scan.txt` file:
    ```bash
